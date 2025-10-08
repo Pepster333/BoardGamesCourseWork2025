@@ -1,0 +1,90 @@
+
+Table tables {
+  TableID int [primary key]
+  MaxPlayers int
+  CurrentPlayers int
+  Username varchar[20]
+  CurrentGame varchar[50]
+  Start timestamp
+  End timestamp
+}
+
+Table  capacity {
+  MaxPeople int
+  CurrentPeople int
+}
+Table employees {
+  EmployeeID int [primary key]
+  EmplName varchar[30]
+  EmplAge int
+  EmplWage float
+}
+
+Table schedule {
+  EmployeeID int
+  Mon bool
+  Tue bool
+  Wed bool
+  Thur bool
+  Fri bool
+  Sat bool
+  Sun bool
+}
+
+Table TableCheck {
+  TableID int
+  TimeForPlay int
+  FoodAndBevarage int
+}
+
+Table expenses {
+  Day datetime
+  Beverages float [not null]
+  Food float [not null]
+  ExpiredFood float
+  ExpiredBev float
+  Electricity float
+  EmployeePay float
+  Rent float 
+}
+
+
+Table income_overal {
+  daily float [not null]
+  weekly float [not null]
+  monthly float [not null]
+  yearly float [not null]
+  YTD float [not null] 
+  Lifetime float [not null]
+}
+
+Table orders {
+  ID int [primary key]
+  DateOfOrder datetime
+  closed bool
+}
+
+Table inventory {
+  ID int [primary key]
+  name varchar[20]
+  price float
+  measurement varchar[20]
+  category_id int
+}
+
+Table orders_products {
+  ID int
+  order_id int
+  invenstory_id int
+  quantity int
+  total int
+}
+
+
+Ref: "employees"."EmployeeID" < "schedule"."EmployeeID"
+
+Ref: "tables"."TableID" < "TableCheck"."TableID"
+
+Ref: "orders"."ID" < "orders_products"."order_id"
+
+Ref: "inventory"."ID" < "orders_products"."invenstory_id"
