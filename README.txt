@@ -1,4 +1,3 @@
-Hi from Miro :)
+Greetings,
 
-These files in this repository currently only involve the diagram which shows how our program would work with a database (relation diagram) and the code going alongside it. 
-We will be posting updates aswell as updating this here file.
+This repository consists of all of the items that have currently been done during the exercises. They range from the relation diagrams to use case scenarios and so on.
