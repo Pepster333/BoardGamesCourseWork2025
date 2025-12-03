@@ -1,0 +1,54 @@
+Правило 9
+Function RefundCash(bool Pay, bool GameAvailable)
+	IF Pay IS TRUE AND GameAvailable is FALSE
+	THEN send email "Order has been canceled due to no inventory. Refunding cash"
+	END IF
+
+Правило 8
+Function CancelOrder(bool Pay, bool GameAvailable)
+	IF Pay IS False AND GameAvailable is FALSE
+	THEN send email "Order has been canceled due to no payment and no inventory"
+	END IF
+
+Правило 7
+Function InquirePayment(bool Pay, bool GameAvailable)
+	IF Pay is FALSE AND GameAvailable is FALSE
+	THEN send email "order is on hold. Please pay!"
+	END IF
+
+Правило 6
+Function Delivery(bool Pay, int GameAvailable)
+	IF Pay is TRUE AND GameAvailable > 0
+	THEN send email "order is being delievered. Thank you for choosing us!"
+	AND set GameAvailable == GameAvailable -1
+	Return GameAvailable
+	END IF
+
+Правило 5
+Function NoAvailableGame(int GameAvailable)
+	IF GameAvailable < 0
+	THEN ShowOnScreen("Game Not Available. Choose another").
+	END IF
+
+Правило 4
+Function MissingPayment(bool FreeTable, bool GameAvailable, bool PeopleCount, bool Payment)
+	IF FreeTable is TRUE AND GameAvailable is TRUE AND PeopleCount is TRUE AND Payment is FALSE
+	THEN ShowOnScreen("Payment pending")
+	END IF
+
+
+Правило 3 
+Function MissingProduct(bool FreeTable, bool GameAvailable, bool PeopleCount, bool Inventory, bool Payment, bool Employee)
+	IF FreeTable is TRUE AND GameAvailable is TRUE AND PeopleCount is TRUE AND Inventory is False AND Payment is TRUE AND Employee is True
+	Then ShowOnScreen("One or more items unavailable. Please change/remove")
+	END IF
+
+Правило 2
+Function Fnuy(bool FreeTable, bool GameAvailable, bool PeopleCount, bool Inventory, bool Payment, bool Employee)
+	IF FreeTable is TRUE AND GameAvailable is TRUE AND PeopleCount is TRUE AND Inventory is True AND Payment is TRUE AND Employee is FALSE
+	Then ShowOnScreen("All is done. Lead the customers to their table and return ASAP")
+
+Правило 1
+Function Fnuy2(bool FreeTable, bool GameAvailable, bool PeopleCount, bool Inventory, bool Payment, bool Employee)
+	IF FreeTable is TRUE AND GameAvailable is TRUE AND PeopleCount is TRUE AND Inventory is True AND Payment is TRUE AND Employee is TRUE
+	Then ShowOnScreen("All is done. Lead the customers and explain the game to them. Time is yours to toy with.")
