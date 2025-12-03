@@ -1,0 +1,54 @@
+Pseudo-Code:
+
+List<Game> games;
+
+Правило 1-2:
+function PurchaseGame() 
+	CheckGameInventoryAmount(gameName);
+	
+	if (CheckGameInventoryAmount(gameName) <= 0)
+		return "Game is out";
+	END IF
+	
+	if (MoneySent = false) 
+		return "Expect payment!";
+	END IF
+	
+	return "Sent Game!"; 
+END FUNCTION
+
+function CheckGameInventoryAmount(gameName) 
+	
+ 	for (int i = 0; i < games.Count(); i++) 
+		if (games[i].Name = gameName) 
+			return games[i].Amount;
+		else 
+			return "Game doesn't exist";
+		END IF
+	END FOR
+END FUNCTION
+
+Правило 3:
+function ProposeGame() 
+	if (CheckGameInventoryAmount = 0)
+		return "Propose something else"
+	END IF
+END FUNCTION
+
+Правило 4-7:
+function SeatClients(numberOfClients) 
+	if (TableAvailable(numberOfClients) = true AND GameChosen = true)
+		return "Seat Customers";
+	else if ()
+		return "Offer purchase or reservation";
+	else if ()
+		return "";
+	else 
+		return "";
+	END IF
+	
+END FUNCTION
+
+function TableAvailable(numberOfClients) 
+	...
+END FUNCTION
