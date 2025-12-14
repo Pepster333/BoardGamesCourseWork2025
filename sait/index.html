@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardHub – Бордови игри</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">🎲 BoardHub</h1>
+    <nav>
+        <a href="#catalog">Игри</a>
+        <a href="#about">За нас</a>
+        <a href="#contact">Контакти</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- КАТАЛОГ -->
+<section id="catalog" class="section">
+    <h2>Каталог с игри</h2>
+    <div id="game-list" class="game-grid"></div>
+</section>
+
+<!-- ЗА НАС -->
+<section id="about" class="section">
+    <h2>За нашето място</h2>
+    <p>
+        BoardHub е уютно място за всички любители на настолни игри.
+        Разполагаме с богат каталог и страхотна атмосфера
+    </p>
+</section>
+
+<!-- КОНТАКТИ -->
+<section id="contact" class="section section-alt">
+    <h2>Контакти</h2>
+    <p><b>Адрес:</b> ул. Студентска, Русе</p>
+    <p><b>Телефон:</b> 0888 123 456</p>
+    <p><b>Имейл:</b> boardhub@gmail.com</p>
+</section>
+
+</main>
+
+<footer>
+    © 2025 BoardHub – Всички права запазени
+</footer>
+
+<!-- МОДАЛ -->
+<div id="game-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+
+        <button id="modal-close" class="modal-close">✕</button>
+
+        <h2 id="modal-title"></h2>
+        <p id="modal-average"></p>
+        <p id="modal-description"></p>
+
+        <h3>Ревюта</h3>
+        <div id="modal-review-list"></div>
+
+        <div class="modal-review-form">
+            <h4>Добави ревю</h4>
+
+            <label>Оценка:</label>
+            <div class="star-rating" id="rating-stars">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+
+            <input id="modal-review-name" type="text" placeholder="Вашето име">
+            <textarea id="modal-review-text" placeholder="Вашето мнение"></textarea>
+
+            <button id="modal-review-submit">Изпрати</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
